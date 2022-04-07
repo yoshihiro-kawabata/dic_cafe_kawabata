@@ -7,7 +7,7 @@ body {
   padding-bottom: 75px;
   min-height: 100%;
 }
-header li {
+li {
   list-style: none;
 }
 dl{
@@ -16,26 +16,20 @@ dl{
 dt{
   width: 80px;
 }
-footer{
-  height: 75px;
-  background-color: #251e19;
-  color:white;
-  text-align: center;
-  font-size: 16px;
-}
-footer a{
-  color:white;
-  text-decoration: none;
-}
-footer p{
-  text-align: center;
-}
 p, ul {
   margin: 0;
   padding: 0;
 }
 div,li {
   box-sizing: border-box;
+}
+.footer {
+  width: 100%;
+  background: #251e19;
+  position: absolute;
+  bottom: -75px;
+  padding-bottom: 10px;
+  height: 75px;
 }
 .header_nav {
   background: linear-gradient(90deg, #fff 20%, rgba(0,0,0,.6) 60%);
@@ -75,14 +69,17 @@ div,li {
 }
 .key {
   height: 500px;
-  background: center / cover no-repeat url("../images/sample_key.jpg");
+  background: center / cover no-repeat url(../images/sample_key.jpg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   font-family: 'Noto Serif JP', serif;
   font-weight: bold;
 }
 .key h1{
   font-size: 2.5rem;
-  margin: 4.2em 0em 0.67em;
 }
+
 .section_title {
   font-family: 'Noto Serif JP', serif;
   font-weight: bold;
@@ -105,105 +102,201 @@ div,li {
   border-radius: 50%;
 }
 
-.div_flex{
-  display: flex; 
+.concept_inner {
+  display: flex;
   justify-content: space-between;
 }
-.concept_txt{
+.concept_content {
   width: 60%;
-  font-size: 14px;
 }
-.concept_img{
+.concept_image {
   width: 35%;
 }
 .section_inner_menu {
   padding: 50px 10% 30px;
-  background: center / 90% no-repeat fixed url("../images/sample_menu_bg.jpg");
+  background: url("../images/sample_menu_bg.jpg") no-repeat bottom;
+  background-size: 100%;
+  background-attachment: fixed;
 }
-
-.menu_cake_box{
-  display: flex; 
+.menu_section {
+  background: url("../images/sample_menu_bg.jpg") no-repeat bottom;
+  background-size: 100%;
+  background-attachment: fixed;
+}
+.menu_title {
+  display: inline-block;
+  font-family: 'Noto Serif JP', serif;
+  text-align: center;
+  font-size: 1.5rem;
+  color: #42210b;
+  border-bottom: solid #42210b 1px;
+  margin-bottom: 20px;
+}
+.menu_list {
+  display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
+}
+.menu_list_recommended {
+  padding-bottom: 50px;
+}
+.recommended_menu_item {
+  width: 49%;
+  display: flex;
+  flex-direction: row-reverse;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.4);;
+}
+.menu_item_title {
+  font-size: 18px;
+  font-family: 'Noto Serif JP', serif;
+}
+.recommended_menu_content {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #fff;
+}
+.recommended_menu_image {
+  width: 55%;
+  object-fit: cover;
   height: 300px;
 }
-.menu_cake_cell{
-  display: flex; 
-  justify-content: space-between;
-  width:49%;
-  background-color:white;
+.recommended_menu_price {
+  color: #42210b;
+  font-size: 18px;
+  text-align: right;
 }
-.cake_img_frame{
-  width:55%;
-  height: 100%;
+.coffee_menu {
+  background: #fff;
+  padding: 20px;
 }
-.cake_txt_frame{
-  width:40%;
-  height: 100%;
-  margin: 0% 2.4%;
+.caffee_menu_list_item {
+  width: 49%;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  padding: 10px;
 }
-.cake_menu_img{
-  width:100%;
-  height: 100%;
+.caffee_menu_image {
+  width: 20%;
+  border-radius: 50%;
 }
-.menu_name{
-  width:100%;
-  height: 35%;
-  font-weight: normal;
-  font-size: 1.3em;
+.caffee_menu_content {
+  width: 80%;
+  padding: 10px;
 }
-.menu_contents{
-  width:100%;
-  height: 45%;
-  text-align:left;
-  font-family: 'Noto Sans JP', sans-serif;
-  color:#42210b;
+.menu_key {
+  height: 100px;
+  background: url("../images/sample_key.jpg") no-repeat center;
+  background-size: cover;
 }
-.cake_menu_price{
-  width:100%;
-  height: 20%;
-  text-align:right;
-  color:#42210b;
+.wrapper {
+  display: flex;
 }
-.coffee_menu_price{
-  width:100%;
-  height: 20%;
-  text-align:left;
-  color:#42210b;
+.main {
+  padding: 0 0 0 50px;
+  width: calc(100% - 200px);
+}
+.side_menu {
+  width: 200px;
+}
+.side_menu_title {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 25px;
+  padding-left: 10px;
+}
+.side_menu_item {
+  padding: 20px 10px;
+  border-bottom: solid #42210b 1px;
+  display: block;
+  text-decoration: none;
+}
+.side_menu_item:hover {
+  background: rgba(83,71,65,.3);
+}
+.side_ad {
+  color: #fff;
+  background: rgba(83,71,65,.7);
+  padding: 20px;
+  margin: 30px 0;
+}
+.menu_image {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+}
+.menu_name {
+  font-family: 'Noto Serif JP', serif;
+}
+.menu_price {
+  font-family: 'Noto Serif JP', serif;
+  text-align: right;
+  font-size: 20px;
+  margin-bottom: 30px;
 }
 
-.menu_coffee_box{
-  display: flex; 
-  flex-wrap: wrap;
-  background-color:white;
-  padding:20px;
+.pancake_menu {
+  background: rgba(83,71,65,.3);
+  padding: 20px;
+  margin-top: 50px;
 }
-.menu_coffee_cell{
-  display: flex; 
+
+.menu_list {
+  display: flex;
   justify-content: space-between;
-  width:49%;
-  margin: 1% 0%;
+  flex-wrap: wrap;
 }
-.coffee_img_frame{
-  width:20%;
-  height: 100%;
+.menu_item {
+  width: 49%;
+  display: flex;
+  flex-direction: row-reverse;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.4);
+  margin-bottom: 20px;
 }
-.coffee_txt_frame{
-  width:80%;
-  height: 100%;
-  margin: 0% 2%;
+.menu_item_content {
+  width: 45%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #fff;
 }
-.footer_box{
-  display: flex; 
-  justify-content: space-between;  
-  padding:1% 37% 0% 37%;
+.menu_item_image {
+  width: 55%;
+  object-fit: cover;
+  height: 300px;
 }
-.footer_logo_img {
+.menu_item_price {
+  color: #42210b;
+  font-size: 18px;
+  text-align: right;
+}
+
+.menu_item_title {
+  font-size: 18px;
+  font-family: 'Noto Serif JP', serif;
+}
+
+.footer_nav {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+.footer_nav_item {
+  padding: 0 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+  text-decoration: none;
+  font-size: 15px;
+}
+.footer_logo {
   width: 80px;
-  height: 32px;
 }
-.footer_menu {
-  padding:2%;
-}
-.footer_logo_copy{
-  font-size: 5px;
+.footer_right {
+  color: white;
+  text-align: center;
+  font-size: 10px;
 }
